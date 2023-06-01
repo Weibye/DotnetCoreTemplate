@@ -6,6 +6,9 @@ on:
     tags:
       - "v*.*.*"
 
+permissions:
+  contents: write
+
 jobs:
   release:
 
@@ -36,3 +39,4 @@ jobs:
             README.md
             LICENSE-APACHE
             LICENSE-MIT
+
