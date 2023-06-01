@@ -1,10 +1,13 @@
 ﻿name: CI/CD
 
-on: 
+on:
+  # Run when pushing to main
+  # This is useful to catch any accidental merged changes.
   push:
-  pull_request:
     branches:
       - main
+  # Run when setting up a pull request to any branch.
+  pull_request:
 
 jobs:
   build:
