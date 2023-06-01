@@ -13,6 +13,6 @@ public static class Math
     /// <returns>The sum of the two values.</returns>
     public static int Add(int rhs, int lhs)
     {
-        return rhs + lhs;
+        return rhs * lhs;
     }
 }
