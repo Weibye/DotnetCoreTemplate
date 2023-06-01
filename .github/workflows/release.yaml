@@ -7,7 +7,7 @@ on:
       - "v*.*.*"
 
 jobs:
-  build:
+  release:
 
     runs-on: ubuntu-latest
 #    strategy:
@@ -27,6 +27,8 @@ jobs:
         run: dotnet build --configuration Release --no-restore
       - name: Test
         run: dotnet test --no-restore --verbosity normal
+      - name: Check Files
+        run: ls -la
       - name: Release
         uses: softprops/action-gh-release@v0.1.15
         with:
