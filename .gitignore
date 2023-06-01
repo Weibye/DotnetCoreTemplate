@@ -1,3 +1,6 @@
 ﻿# Build Artefacts
 [Bb]in/
 [Oo]bj/
+
+# User Specific Files
+*.user
