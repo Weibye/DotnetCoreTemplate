@@ -1,6 +1,15 @@
-﻿name: dotnet package
+﻿name: CI/CD
 
-on: [push]
+on:
+  # Run when pushing to main
+  # This is useful to catch any accidental merged changes.
+  push:
+    branches:
+      - main
+  # Run when setting up a pull request to the main branch.
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
