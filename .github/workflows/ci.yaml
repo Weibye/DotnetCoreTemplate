@@ -6,8 +6,10 @@ on:
   push:
     branches:
       - main
-  # Run when setting up a pull request to any branch.
+  # Run when setting up a pull request to the main branch.
   pull_request:
+    branches:
+      - main
 
 jobs:
   build:
