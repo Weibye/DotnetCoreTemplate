@@ -10,14 +10,14 @@ permissions:
   contents: write
 
 jobs:
-  strategy:
-    matrix:
-      os:
-        - windows-latest
-        - ubuntu-latest
-        # - ios-latest
-      # dotnet-version: [ '3.1.x', '6.0.x' ]
   build:
+    strategy:
+      matrix:
+        os:
+          - windows-latest
+          - ubuntu-latest
+          # - ios-latest
+        # dotnet-version: [ '3.1.x', '6.0.x' ]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
@@ -46,6 +46,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       # download all artefacts
       - name: Prepare Artefacts
         uses: actions/download-artifact@v3
