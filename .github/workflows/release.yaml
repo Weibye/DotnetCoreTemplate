@@ -32,8 +32,8 @@ jobs:
         run: dotnet test --no-restore --verbosity normal
       - name: Check Files
         run: |
-          ls -la
-          ls -la ./ConsoleApp/bin/Release/net6.0/*
+          ls
+          ls ./ConsoleApp/bin/Release/net6.0/*
       - name: Upload Artefact
         uses: actions/upload-artifact@v3
         with:
