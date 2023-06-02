@@ -11,8 +11,8 @@ permissions:
 
 jobs:
   release:
-
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
+#    runs-on: ubuntu-latest
 #    strategy:
 #      matrix:
 #        dotnet-version: [ '3.1.x', '6.0.x' ]
@@ -33,12 +33,12 @@ jobs:
       - name: Check Files
         run: |
           ls -la
-          ls -la ./**/bin/**/*
+          ls -la ./ConsoleApp/bin/Release/net6.0/*
       - name: Upload Artefact
         uses: actions/upload-artifact@v3
         with:
-          name: ConsoleApp
-          path: ./**/bin/Release/net6.0/**/*
+          name: Windows
+          path: ./ConsoleApp/bin/Release/net6.0/*
 #      - name: Release
 #        uses: softprops/action-gh-release@v0.1.15
 #        with:
