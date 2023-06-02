@@ -10,20 +10,23 @@ permissions:
   contents: write
 
 jobs:
-  release:
-    runs-on: windows-latest
-#    runs-on: ubuntu-latest
-#    strategy:
-#      matrix:
-#        dotnet-version: [ '3.1.x', '6.0.x' ]
-
+  strategy:
+    matrix:
+      os:
+        - windows-latest
+        - ubuntu-latest
+        # - ios-latest
+      # dotnet-version: [ '3.1.x', '6.0.x' ]
+  build:
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
-      - name: Setup .NET Core SDK ${{ matrix.dotnet-version }}
+      - name: Setup .NET Core SDK # ${{ matrix.dotnet-version }}
         uses: actions/setup-dotnet@v3
         with:
           # dotnet-version: ${{ matrix.dotnet-version }}
           dotnet-version: '6.0.x'
+        # TODO: This should be cached
       - name: Install dependencies
         run: dotnet restore
       - name: Build
@@ -37,13 +40,22 @@ jobs:
       - name: Upload Artefact
         uses: actions/upload-artifact@v3
         with:
-          name: Windows
+          name: ${{ matrix.os }}
           path: ./ConsoleApp/bin/Release/net6.0/*
-#      - name: Release
-#        uses: softprops/action-gh-release@v0.1.15
-#        with:
-#          files: |
-#            README.md
-#            LICENSE-APACHE
-#            LICENSE-MIT
 
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      # download all artefacts
+      - name: Prepare Artefacts
+        uses: actions/download-artifact@v3
+      - name: Display artefact structure
+        run: ls -R
+      # upload to release
+      - name: Release
+        uses: softprops/action-gh-release@v0.1.15
+        with:
+          files: |
+            README.md
+            LICENSE-APACHE
+            LICENSE-MIT
