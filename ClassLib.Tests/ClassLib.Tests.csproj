@@ -6,7 +6,7 @@
 
         <IsPackable>false</IsPackable>
 
-        <RootNamespace>MathLib.Tests</RootNamespace>
+        <RootNamespace>ClassLib.Tests</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
