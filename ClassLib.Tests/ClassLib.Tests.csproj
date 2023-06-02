@@ -5,6 +5,8 @@
         <Nullable>enable</Nullable>
 
         <IsPackable>false</IsPackable>
+
+        <RootNamespace>MathLib.Tests</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -15,7 +17,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\MathLib\MathLib.csproj" />
+      <ProjectReference Include="..\ClassLib\ClassLib.csproj" />
     </ItemGroup>
 
 </Project>

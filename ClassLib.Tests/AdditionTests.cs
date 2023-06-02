@@ -1,5 +1,5 @@
 using NUnit.Framework;
-namespace MathLib.Tests;
+namespace ClassLib.Tests;
 
 public class Tests
 {

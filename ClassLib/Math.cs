@@ -1,4 +1,4 @@
-﻿namespace MathLib;
+﻿namespace ClassLib;
 
 /// <summary>
 /// Contains some common mathematical operations.

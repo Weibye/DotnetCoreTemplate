@@ -1,5 +1,5 @@
-﻿using Math = MathLib.Math;
-namespace ConsoleTemplate;
+﻿using Math = ClassLib.Math;
+namespace DotNetTemplate;
 
 /// <summary>
 /// This is the main entrypoint of a console application that uses the class library for functionality.
