@@ -7,4 +7,8 @@
         <RootNamespace>ClassLib</RootNamespace>
     </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <DocumentationFile>bin\Release\ClassLib.xml</DocumentationFile>
+    </PropertyGroup>
+
 </Project>
