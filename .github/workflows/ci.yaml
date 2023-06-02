@@ -27,7 +27,9 @@ jobs:
           dotnet-version: ${{ matrix.dotnet-version }}
       - name: Install dependencies
         run: dotnet restore
+        # Check that the application can be built without any compile errors.
       - name: Build
         run: dotnet build --configuration Release --no-restore
+        # Check that all tests passes
       - name: Test
         run: dotnet test --no-restore --verbosity normal
