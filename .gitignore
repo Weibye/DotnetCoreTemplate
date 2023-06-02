@@ -4,3 +4,7 @@
 
 # User Specific Files
 *.user
+
+# IDEs and developmet tools
+.idea
+.vscode
